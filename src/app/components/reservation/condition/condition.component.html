@@ -1,0 +1,31 @@
+<div *ngIf="reservation" class="azds-conditions">
+  <label>Adults:&nbsp;</label>
+  <select name="adults" (change)="onAdults($event)">
+    <option *ngFor="let item of adults" [value]="item" [selected]="reservation.adults === item">
+      {{ item }}
+    </option>
+  </select>
+  <hr>
+  <div class="azds-conditions-arrive">
+    <label>Arrive:&nbsp;</label>
+    <input type="date" name="arrive" [value]="reservation.arriveValue" (change)="onArrive($event)">
+  </div>
+  <hr>
+  <div class="azds-conditions-depart">
+    <label>Depart:&nbsp;</label>
+    <input type="date" name="depart" [value]="reservation.departValue" (change)="onDepart($event)">
+  </div>
+  <hr>
+  <div class="azds-conditions-children">
+    <label>Children:&nbsp;</label>
+    <select name="children" (change)="onChildren($event)">
+      <option *ngFor="let item of children" [value]="item" [selected]="reservation.children === item">
+        {{ item }}
+      </option>
+    </select>
+  </div>
+  <hr>
+  <div class="azds-conditions-submit">
+    <button type="button" (click)="onSubmit()">Check availability</button>
+  </div>
+</div>
