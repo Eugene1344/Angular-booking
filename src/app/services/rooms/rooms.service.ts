@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Offer } from '../../store/models/offers.models';
+import { RoomModel } from '../../store/models/rooms.models';
 
 @Injectable({ providedIn: 'root' })
-export class OffersService {
+export class RoomsService {
   constructor(private http: HttpClient) {}
 
-  getOffers(): Observable<ReadonlyArray<Offer>> {
-    return this.http.get<{ items: Offer[] }>('http://localhost:3030/rooms')
+  getRooms(): Observable<ReadonlyArray<RoomModel>> {
+    return this.http.get<{ items: RoomModel[] }>('http://localhost:3030/rooms')
       .pipe(map((offers) => offers.items || []))
   }
 }

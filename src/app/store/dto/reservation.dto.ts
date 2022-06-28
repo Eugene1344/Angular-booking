@@ -1,5 +1,5 @@
-import {ReservationModel} from "../../store/models/reservation.models";
-import {ReservationSteps} from "./reservation.enums";
+import {ReservationModel} from "../models/reservation.models";
+import {ReservationSteps} from "../../services/reservation/reservation.enums";
 import {Utils} from "../../common/util";
 
 const DATE_OPTIONS: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -26,7 +26,7 @@ class ReservationDTO implements ReservationModel {
   constructor(props: ReservationModel = {}) {
     this.id = Utils.uniqueId();
     this.step = props.step || ReservationSteps.STEP_1;
-    this.adults = props.adults || 2;
+    this.adults = props.adults || 3;
     this.children = props.children || 0;
     this.arrive = this._getDateFromProps(props.arrive);
     this.depart = props.depart ? this._getDateFromProps(props.depart) : this._addDays(this.arrive);

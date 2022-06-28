@@ -1,0 +1,28 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Test Room 1",
+      "currency": "$",
+      "price": 150.99
+    },
+    {
+      "id": 2,
+      "name": "Test Room 2",
+      "currency": "$",
+      "price": 160.99
+    },
+    {
+      "id": 3,
+      "name": "Test Room 3",
+      "currency": "$",
+      "price": 170.99
+    },
+    {
+      "id": 4,
+      "name": "Test Room 4",
+      "currency": "$",
+      "price": 190.99
+    }
+  ]
+}

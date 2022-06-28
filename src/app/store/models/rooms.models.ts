@@ -1,4 +1,4 @@
-export interface Offer {
+export interface RoomModel {
   id?: number,
   name?: string,
   currency?: string,

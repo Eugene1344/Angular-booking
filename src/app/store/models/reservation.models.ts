@@ -1,4 +1,6 @@
 import { ReservationSteps } from '../../services/reservation/reservation.enums';
+import { ReservationDTO } from "../../store/dto/reservation.dto";
+import {RoomDTO} from "../../services/rooms/room.dto";
 
 interface ReservationModel {
   id?: string;
@@ -9,11 +11,18 @@ interface ReservationModel {
   step?: ReservationSteps;
 }
 
-interface ReservationStateModel {
-  reservation: ReservationModel
+interface ReservationChangeModel {
+  name: keyof ReservationModel;
+  value: number | string | Date;
 }
+
+interface NextReservationModel {
+  room?: RoomDTO;
+}
+
 
 export {
   ReservationModel,
-  ReservationStateModel
+  ReservationChangeModel,
+  NextReservationModel
 };

@@ -1,4 +1,9 @@
-<div class="azds-simple-booking">
-  <h1>Reservation Project</h1>
-  <router-outlet></router-outlet>
+<div class="azds-reservation">
+  <h2>Reservation Component</h2>
+  <div>State: {{ reservation.step }}</div>
+  <azds-condition *ngIf="reservation.step == reservationSteps.STEP_1"></azds-condition>
+  <azds-offer
+    *ngIf="reservation.step == reservationSteps.STEP_2"
+  ></azds-offer>
+  <azds-confirm *ngIf="reservation.step == reservationSteps.STEP_3"></azds-confirm>
 </div>
